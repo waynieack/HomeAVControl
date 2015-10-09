@@ -1,0 +1,697 @@
+###############################################################################
+#
+Window "input_select_directtv": # Direct TV Input Window
+# 
+###############################################################################
+
+
+#Power/Sleep
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/142 "Shell//home/wayne/HomeAVControl/bin/input_change togglepower"
+
+#LiveTV
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/366 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=guide"
+
+#left mouse
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/272 "fill this in!"
+
+#right mouse
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/273 "fill this in!"
+
+#green windows button
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/102 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=list"
+
+#mypictures
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/212 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=red"
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/212  "Shell//home/wayne/HomeAVControl/bin/input_xbmc"
+
+#myTV
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/226 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=green"
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/226 "Shell//home/wayne/HomeAVControl/bin/input_change directtv"
+
+#mymusic
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/391 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=yellow"
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/391 "Shell//home/wayne/HomeAVControl/bin/input_smarthub"
+
+#myvideos
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/393 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=blue"
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/393 "Shell//home/wayne/HomeAVControl/bin/input_wii"
+
+#DVD Menu
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/389 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=menu"
+
+#stop
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/166 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=stop"
+
+#record
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/167 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=record"
+
+#pause
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/119 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=pause"
+
+#rewind
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/168 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=rew"
+
+#fastfoward
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/208 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=ffwd"
+
+#play
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/207 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=play"
+
+#skipback
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/165 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=replay"
+
+#skip forward
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/163 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=advance"
+
+#guide
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/362 "Shell//home/wayne/HomeAVControl/bin/input_change start"
+
+#up
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/103 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=up"
+
+#down
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/108 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=down"
+
+#left
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/105 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=left"
+
+#right
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/106 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=right"
+
+#ok
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/28 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=select"
+
+#back
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/158 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=back"
+
+#info
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/130 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=info"
+
+#volup
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/115 "Shell//home/wayne/HomeAVControl/bin/hkpl.pl VOL_UP"
+
+#voldown
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/114 "Shell//home/wayne/HomeAVControl/bin/hkpl.pl VOL_DOWN"
+
+#mute
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/113 "Shell//home/wayne/HomeAVControl/bin/hkpl.pl MUTE"
+
+#chan up
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/402 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=chanup"
+
+#chan down
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/403 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=chandown"
+
+#1
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/2 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=1"
+
+#2
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/3 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=2"
+
+#3
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/4 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=3"
+
+#4
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/5 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=4"
+
+#5
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/6 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=5"
+
+#6
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/7 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=6"
+
+#7
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/8 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=7"
+
+#8
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/9 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=8"
+
+#9
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/10 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=9"
+
+#0
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/11 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=0"
+
+#clear
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/1 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=exit"
+
+#enter
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/28 "Shell//usr/bin/curl http://192.168.195.46:8080/remote/processKey?key=enter"
+
+
+###############################################################################
+#
+Window "input_select_samsung": # Samsung Input Window
+# 
+###############################################################################
+
+
+#Power/Sleep
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/142 "Shell//home/wayne/HomeAVControl/bin/input_change togglepower"
+
+#LiveTV
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/366 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_SOURCE"
+
+#left mouse
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/272 "fill this in!"
+
+#right mouse
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/273 "fill this in!"
+
+#green windows button
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/102 "Shell//home/wayne/HomeAVControl/bin/input_change start"
+
+#mypictures
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/212 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_RED"
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/212  "Shell//home/wayne/HomeAVControl/bin/input_xbmc"
+
+#myTV
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/226 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_GREEN"
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/226 "Shell//home/wayne/HomeAVControl/bin/input_directtv"
+
+#mymusic
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/391 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_YELLOW"
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/391 "Shell//home/wayne/HomeAVControl/bin/input_smarthub"
+
+#myvideos
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/393 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_CYAN"
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/393 "Shell//home/wayne/HomeAVControl/bin/input_wii"
+
+#DVD Menu
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/389 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_MENU"
+
+#stop
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/166 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_STOP"
+
+#record
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/167 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_REC"
+
+#pause
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/119 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_PAUSE"
+
+#rewind
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/168 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_REWIND"
+
+#fastfoward
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/208 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_FF"
+
+#play
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/207 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_PLAY"
+
+#skipback
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/165 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_REWIND"
+
+#skip forward
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/163 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_FF"
+
+#guide
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/362 "Shell//home/wayne/HomeAVControl/bin/input_change start"
+
+#up
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/103 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_UP"
+
+#down
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/108 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_DOWN"
+
+#left
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/105 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_LEFT"
+
+#right
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/106 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_RIGHT"
+
+#ok
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/28 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_ENTER"
+
+#back
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/158 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_RETURN"
+
+#info
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/130 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_INFO"
+
+#volup
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/115 "Shell//home/wayne/HomeAVControl/bin/hkpl.pl VOL_UP"
+
+#voldown
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/114 "Shell//home/wayne/HomeAVControl/bin/hkpl.pl VOL_DOWN"
+
+#mute
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/113 "Shell//home/wayne/HomeAVControl/bin/hkpl.pl MUTE"
+
+#chan up
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/402 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_CHUP"
+
+#chan down
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/403 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_CHDOWN"
+
+#1
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/2 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_1"
+
+#2
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/3 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_2"
+
+#3
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/4 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_3"
+
+#4
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/5 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_4"
+
+#5
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/6 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_5"
+
+#6
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/7 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_6"
+
+#7
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/8 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_7"
+
+#8
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/9 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_8"
+
+#9
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/10 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_9"
+
+#0
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/11 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_0"
+
+#clear
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/1 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_EXIT"
+
+#enter
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/28 "Shell//home/wayne/HomeAVControl/bin/bashRemote KEY_ENTER"
+
+
+###############################################################################
+#
+Window "input_select_roku": # Roku Input Window
+#
+###############################################################################
+
+#Power/Sleep
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/142 "Shell//home/wayne/HomeAVControl/bin/input_change togglepower"
+
+#LiveTV
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/366 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh home"
+
+#left mouse
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/272 "fill this in!"
+
+#right mouse
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/273 "fill this in!"
+
+#green windows button
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/102 "Shell//home/wayne/HomeAVControl/bin/input_change start"
+
+#mypictures
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/212 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh RED"
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/212  "Shell//home/wayne/HomeAVControl/bin/input_xbmc"
+
+#myTV
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/226 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh GREEN"
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/226 "Shell//home/wayne/HomeAVControl/bin/input_directtv"
+
+#mymusic
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/391 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh YELLOW"
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/391 "Shell//home/wayne/HomeAVControl/bin/input_smarthub"
+
+#myvideos
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/393 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh CYAN"
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/393 "Shell//home/wayne/HomeAVControl/bin/input_wii"
+
+#DVD Menu
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/389 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh go 12"
+
+#stop
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/166 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh play"
+
+#record
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/167 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh REC"
+
+#pause
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/119 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh play"
+
+#rewind
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/168 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh rev"
+
+#fastfoward
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/208 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh fwd"
+
+#play
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/207 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh play"
+
+#skipback
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/165 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh instantreplay"
+
+#skip forward
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/163 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh fwd"
+
+#guide
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/362 "Shell//home/wayne/HomeAVControl/bin/input_change start"
+
+#up
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/103 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh up"
+
+#down
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/108 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh down"
+
+#left
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/105 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh left"
+
+#right
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/106 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh right"
+
+#ok
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/28 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh select"
+
+#back
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/158 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh back"
+
+#info
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/130 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh info"
+
+#volup
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/115 "Shell//home/wayne/HomeAVControl/bin/hkpl.pl VOL_UP"
+
+#voldown
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/114 "Shell//home/wayne/HomeAVControl/bin/hkpl.pl VOL_DOWN"
+
+#mute
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/113 "Shell//home/wayne/HomeAVControl/bin/hkpl.pl MUTE"
+
+#chan up
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/402 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh up"
+
+#chan down
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/403 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh down"
+
+#1
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/2 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh 1"
+
+#2
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/3 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh 2"
+
+#3
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/4 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh 3"
+
+#4
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/5 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh 4"
+
+#5
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/6 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh 5"
+
+#6
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/7 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh 6"
+
+#7
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/8 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh 7"
+
+#8
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/9 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh 8"
+
+#9
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/10 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh 9"
+
+#0
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/11 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh 0"
+
+#clear
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/1 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh backspace"
+
+#enter
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/28 "Shell//home/wayne/HomeAVControl/bin/roku_bash.sh enter"
+
+
+###############################################################################
+#
+Window "KODI":
+#
+###############################################################################
+
+#Power/Sleep
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/142 "Shell//home/wayne/HomeAVControl/bin/input_change togglepower"
+
+#LiveTV
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/366 "XKey/O"
+
+#left mouse
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/272 "fill this in!"
+
+#right mouse
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/273 "fill this in!"
+
+#green windows button
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/102  "Shell//home/wayne/HomeAVControl/bin/input_change start"
+
+#mypictures
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/212  "Shell//home/wayne/HomeAVControl/bin/input_change xbmc"
+
+#myTV
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/226 "Shell//home/wayne/HomeAVControl/bin/input_change directtv"
+
+#mymusic
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/391 "Shell//home/wayne/HomeAVControl/bin/input_change samsung"
+
+#myvideos
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/393 "Shell//home/wayne/HomeAVControl/bin/input_change roku"
+
+#DVD Menu
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/389 "fill this in!"
+
+#stop
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/166 "XKey/X"
+
+#record
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/167 "XKey/Sys_Req"
+
+#pause
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/119 "XKey/p"
+
+#rewind
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/168 "XKey/r"
+
+#fastfoward
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/208 "XKey/f"
+
+#play
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/207 "XKey/p"
+
+#skipback
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/165 "XKey/comma"
+
+#skip forward
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/163 "XKey/period"
+
+#guide
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/362 "Shell//home/wayne/HomeAVControl/bin/input_change start"
+
+#up
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/103 "fill this in!"
+
+#down
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/108 "fill this in!"
+
+#left
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/105 "fill this in!"
+
+#right
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/106 "fill this in!"
+
+#ok
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/28 "fill this in!"
+
+#back
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/158 "XKey/BackSpace"
+
+#info
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/130 "XKey/I"
+
+#volup
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/115 "Shell//home/wayne/HomeAVControl/bin/hkpl.pl VOL_UP"
+
+#voldown
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/114 "Shell//home/wayne/HomeAVControl/bin/hkpl.pl VOL_DOWN"
+
+#mute
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/113 "Shell//home/wayne/HomeAVControl/bin/hkpl.pl MUTE"
+
+#chan up
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/402 "XKey/Page_Up"
+
+#chan down
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/403 "XKey/Page_Down"
+
+#1
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/2 "fill this in!"
+
+#2
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/3 "fill this in!"
+
+#3
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/4 "fill this in!"
+
+#4
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/5 "fill this in!"
+
+#5
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/6 "fill this in!"
+
+#6
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/7 "fill this in!"
+
+#7
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/8 "fill this in!"
+
+#8
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/9 "fill this in!"
+
+#9
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/10 "fill this in!"
+
+#0
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/11 "fill this in!"
+
+#clear
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/1 "fill this in!"
+
+#enter
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/28 "fill this in!"
+
+
+
+###############################################################################
+#
+Window "": # Catch All (XBMC, ETC.)
+# 
+###############################################################################
+ 
+#Power/Sleep
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/142 "Shell//home/wayne/HomeAVControl/bin/input_change togglepower"
+ 
+#or to bring up shutdown menu
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/142 "XKey/S"
+ 
+#LiveTV
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/366 "XKey/O"
+ 
+#left mouse
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/272 "fill this in!"
+ 
+#right mouse
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/273 "fill this in!"
+ 
+#green windows button
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/102  "Shell//home/wayne/HomeAVControl/bin/input_change start"
+ 
+#mypictures
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/212  "Shell//home/wayne/HomeAVControl/bin/input_change xbmc"
+ 
+#myTV
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/226 "Shell//home/wayne/HomeAVControl/bin/input_change directtv"
+
+#mymusic
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/391 "Shell//home/wayne/HomeAVControl/bin/input_change samsung"
+ 
+#myvideos
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/393 "Shell//home/wayne/HomeAVControl/bin/input_change roku"
+ 
+#DVD Menu
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse" none key/389 "fill this in!"
+ 
+#stop
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/166 "fill this in!"
+ 
+#record
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/167 "XKey/Sys_Req"
+ 
+#pause
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/119 "XKey/space"
+ 
+#rewind
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/168 "fill this in!"
+ 
+#fastfoward
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/208 "fill this in!"
+ 
+#play
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/207 "XKey/P"
+ 
+#skipback
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/165 "fill this in!"
+ 
+#skip forward
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/163 "fill this in!"
+ 
+#guide
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/362 "XKey/Menu"
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/362 "Shell//home/wayne/HomeAVControl/bin/input_change start"
+ 
+#up
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/103 "fill this in!"
+ 
+#down
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/108 "fill this in!"
+ 
+#left
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/105 "fill this in!"
+ 
+#right
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/106 "fill this in!"
+ 
+#ok
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/28 "fill this in!"
+ 
+#back 
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/158 "XKey/BackSpace"
+ 
+#info
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/130 "XKey/I"
+ 
+#volup
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/115 "Shell//home/wayne/HomeAVControl/bin/hkpl.pl VOL_UP"
+
+#voldown
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/114 "Shell//home/wayne/HomeAVControl/bin/hkpl.pl VOL_DOWN"
+
+#mute
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/113 "Shell//home/wayne/HomeAVControl/bin/hkpl.pl MUTE"
+ 
+#chan up 
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/402 "XKey/Page_Up"
+ 
+#chan down
+"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/403 "XKey/Page_Down"
+ 
+#1
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/2 "fill this in!"
+ 
+#2
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/3 "fill this in!"
+ 
+#3
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/4 "fill this in!"
+ 
+#4
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/5 "fill this in!"
+ 
+#5
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/6 "fill this in!"
+ 
+#6
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/7 "fill this in!"
+ 
+#7
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/8 "fill this in!"
+ 
+#8
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/9 "fill this in!"
+ 
+#9
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/10 "fill this in!"
+ 
+#0
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/11 "fill this in!"
+ 
+#clear
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/1 "fill this in!"
+ 
+#enter
+#"Gyration Gyration RF Technology Receiver" "/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd" none key/28 "fill this in!"

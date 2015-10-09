@@ -1,0 +1,3 @@
+#!/usr/bin/perl
+`/home/wayne/HomeAVControl/bin/input_change xbmc`;
+`/home/wayne/HomeAVControl/bin/input_change poweron`;

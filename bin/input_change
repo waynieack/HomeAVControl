@@ -1,0 +1,266 @@
+#!/bin/bash
+SCRIPTDIR="/home/wayne/HomeAVControl"
+RAZORSTREAM="192.168.195.33"
+TVIP="192.168.195.45"
+DIRECTIP="192.168.195.46"
+XBMCIP="127.0.0.1:8888"
+ZMIP="192.168.195.35"
+XBMCUSER="xbox"
+XBMCPASS="xbox"
+ZMUSER="viewer"
+ZMPASS="viewer"
+GYRATIONMOUSE="/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-if01-event-mouse"
+GYRATIONKBD="/dev/input/by-id/usb-Gyration_Gyration_RF_Technology_Receiver-event-kbd"
+EVROUTER="/usr/bin/evrouter"
+CURL="/usr/bin/curl"
+WMCTRL="/usr/bin/wmctrl"
+KODI="/usr/bin/kodi"
+XTE="/usr/bin/xte"
+ZMVIEWER="/usr/bin/zmviewer"
+
+
+
+function isup () {
+echo `ps -ef|grep -v grep|grep $1|wc -l`
+}
+
+function checkfile () {
+if [ $1 ]; then
+ if [ ! -e "$SCRIPTDIR/tcl/$1" ]; then
+  ln -s "$SCRIPTDIR/tcl/input_select" "$SCRIPTDIR/tcl/$1"
+ fi
+fi
+}
+
+
+function restartevrouter () {
+##
+# http://www.bedroomlan.org/projects/evrouter
+##
+        #sudo $EVROUTER -q
+	sudo killall $EVROUTER
+        sleep 1
+        sudo rm -rf /tmp/.evrouter*
+        sudo $EVROUTER -c $SCRIPTDIR/evrouter/evrt $GYRATIONMOUSE $GYRATIONKBD
+}
+
+function startevrouter () {
+ISEVROUTERUP=$(isup 'evrouter')    # Determine if evrouter is already running on system.
+if [ $ISEVROUTERUP -eq 0 ]; then        # If evrouter isn't running, start it.
+  sudo rm -rf /tmp/.evrouter*
+  sudo $EVROUTER -c $SCRIPTDIR/evrouter/evrt $GYRATIONMOUSE $GYRATIONKBD
+fi
+}
+
+function togglepower () {
+ISTVUP=`$SCRIPTDIR/bin/checktvstat.pl $TVIP`
+LASTINPUT=`cat $SCRIPTDIR/tmp/input_change.txt`
+
+
+        if [ $ISTVUP == 'ON' ]; then
+            $SCRIPTDIR/bin/bashRemote KEY_POWEROFF
+            $SCRIPTDIR/bin/hkpl.pl OFF
+            $CURL http://$DIRECTIP:8080/remote/processKey?key=poweroff
+         else
+            ssh pi\@$RAZORSTREAM 'irsend SEND_ONCE samsung power'
+            $CURL http://$DIRECTIP:8080/remote/processKey?key=poweron
+            wget -O - --user=$XBMCUSER --password=$XBMCPASS --header='Content-Type: application/json' --post-data='{"jsonrpc": "2.0", "method": "Input.Back"}' http://$XBMCIP/jsonrpc > /dev/null
+            $LASTINPUT $LASTINPUT
+         fi
+}
+
+function poweron () {
+ISXBMCUP=$(isup 'kodi.bin')    # Determine if XBMC is already running on system.
+ISTVUP=`$SCRIPTDIR/bin/checktvstat.pl $TVIP`
+ISDIRECTUP=`$SCRIPTDIR/bin/checktvstat.pl $DIRECTIP`
+LASTINPUT=`cat $SCRIPTDIR/tmp/input_change.txt`
+
+if [ $ISTVUP == 'OFF' ]; then
+            ssh pi\@$RAZORSTREAM 'irsend SEND_ONCE samsung power'
+        fi
+        if [ $ISDIRECTUP == 'OFF' ]; then
+            $CURL http://$DIRECTIP:8080/remote/processKey?key=poweron
+        fi
+        if [ $ISXBMCUP -gt 0 ]; then
+	    wget -O - --user=$XBMCUSER --password=$XBMCPASS --header='Content-Type: application/json' --post-data='{"jsonrpc": "2.0", "method": "Input.Back"}' http://$XBMCIP/jsonrpc > /dev/null
+	fi
+        $LASTINPUT $LASTINPUT
+}
+
+function poweroff () {
+ISTVUP=`$SCRIPTDIR/bin/checktvstat.pl $TVIP`
+
+        if [ $ISTVUP == 'ON' ]; then
+            $SCRIPTDIR/bin/bashRemote KEY_POWEROFF
+        fi
+        $SCRIPTDIR/bin/hkpl.pl OFF
+        $CURL http://$DIRECTIP:8080/remote/processKey?key=poweroff
+}
+
+function start () {
+        $SCRIPTDIR/bin/hkpl.pl MEDIA
+        ISSELECTUP=`ps -ef|grep -v grep|grep input_select_start|wc -l`
+
+        if [ $ISSELECTUP -eq 0 ]; then
+          $SCRIPTDIR/tcl/input_select_start &
+        sleep 1
+        fi
+
+        $WMCTRL -a input_select_start
+        exitsmarttv
+        echo $1 > $SCRIPTDIR/tmp/input_change.txt
+}
+
+function exitsmarttv () {
+ISTVUP=`$SCRIPTDIR/bin/checktvstat.pl $TVIP`
+        if [ $ISTVUP == 'ON' ]; then
+	 LASTINPUT=`cat $SCRIPTDIR/tmp/input_change.txt`
+         if [ "$LASTINPUT" == 'samsung' ]; then
+          $SCRIPTDIR/bin/bashRemote KEY_EXIT
+          $SCRIPTDIR/bin/bashRemote KEY_ENTER
+	  sleep 14
+          $SCRIPTDIR/bin/bashRemote KEY_EXIT
+          #$SCRIPTDIR/bin/bashRemote KEY_TV
+	  #sleep 5
+         # $SCRIPTDIR/bin/bashRemote KEY_HDMI
+	 fi
+	fi
+}
+
+function directtv () {
+	$SCRIPTDIR/bin/direct_tv.pl ip $DIRECTIP on
+	$SCRIPTDIR/bin/hkpl.pl SAT
+
+	#make tcl cover the screen for evrouter window select
+	ISSELECTUP=$(isup 'input_select_directtv')
+
+	if [ $ISSELECTUP -eq 0 ]; then
+	  checkfile "input_select_directtv"
+	  $SCRIPTDIR/tcl/input_select_directtv &
+	fi
+	$WMCTRL -a input_select_directtv
+        exitsmarttv
+        echo $1 > $SCRIPTDIR/tmp/input_change.txt
+}
+
+function samsung () {
+	echo $1 > $SCRIPTDIR/tmp/input_change.txt
+	$SCRIPTDIR/bin/hkpl.pl TV
+	sleep 1
+	$SCRIPTDIR/bin/bashRemote KEY_W_LINK
+
+	ISSELECTUP=$(isup 'input_select_samsung')
+	if [ $ISSELECTUP -eq 0 ]; then
+          checkfile "input_select_samsung"
+	  $SCRIPTDIR/tcl/input_select_samsung &
+	fi
+	$WMCTRL -a input_select_samsung
+}
+
+function xbmc () {
+ISXBMCUP=$(isup 'kodi.bin')    # Determine if XBMC is already running on system.
+	if [ $ISXBMCUP -eq 0 ]; then            # If XBMC isn't running, start it.
+	  $KODI -fs --nolirc &
+	fi
+
+	if [ $ISXBMCUP -gt 0 ]; then            # If xbmc is running, make it active.
+	  $WMCTRL -a KODI
+	fi
+
+	$SCRIPTDIR/bin/hkpl.pl MEDIA
+        exitsmarttv
+        echo $1 > $SCRIPTDIR/tmp/input_change.txt
+}
+
+function fdcam () {
+ISXBMCUP=$(isup 'kodi.bin')    # Determine if XBMC is already running on system.
+JSONDT="{\"method\":\"Player.Open\",\"id\":44,\"jsonrpc\":\"2.0\",\"params\":{\"item\":{\"file\":\"http://$ZMIP/cgi-bin/nph-zms?mode=jpeg&monitor=4&scale=100&maxfps=15&user=$ZMPASS&password=$ZMUSER\"}}}"
+	$SCRIPTDIR/bin/hkpl.pl MEDIA
+
+	if [ $ISXBMCUP -eq 0 ]; then            # If XBMC isn't running, start it.
+	  $KODI -fs &
+	  sleep 2000
+	   wget -O - --user=$XBMCUSER --password=$XBMCPASS --header='Content-Type: application/json' --post-data=$JSONDT http://$XBMCIP/jsonrpc > /dev/null
+	fi
+
+	if [ $ISXBMCUP -gt 0 ]; then            # If xbmc is running, make it active.
+	  $WMCTRL -a KODI
+           wget -O - --user=$XBMCUSER --password=$XBMCPASS --header=$JSONHD --post-data=$JSONDT http://$XBMCIP/jsonrpc > /dev/null
+	fi
+        exitsmarttv
+        echo $1 > $SCRIPTDIR/tmp/input_change.txt
+}
+
+
+function wii () {
+	ISSELECTUP=$(isup 'input_select_samsung')
+
+	if [ $ISSELECTUP -eq 0 ]; then
+	  checkfile "input_select_samsung"
+	  $SCRIPTDIR/tcl/input_select_samsung &
+	fi
+	$WMCTRL -a input_select_samsung
+
+	$SCRIPTDIR/bin/hkpl.pl GAME
+        exitsmarttv
+        echo $1 > $SCRIPTDIR/tmp/input_change.txt
+}
+
+function roku () {
+        ISSELECTUP=$(isup 'input_select_roku')
+
+        if [ $ISSELECTUP -eq 0 ]; then
+	  checkfile "input_select_roku"
+          $SCRIPTDIR/tcl/input_select_roku &
+        fi
+        $WMCTRL -a input_select_roku
+
+        $SCRIPTDIR/bin/hkpl.pl DVR
+        exitsmarttv
+        echo $1 > $SCRIPTDIR/tmp/input_change.txt
+}
+
+function zmview () {
+##
+# http://sourceforge.net/projects/zmviewer/
+##
+	ISZMVUP=$(isup 'zmviewer')    # Determine if zmviewer is already running on system.
+
+	if [ $ISZMVUP -eq 0 ]; then            # If zmviewer isn't running, start it.
+	  nohup $ZMVIEWER &
+	  sleep 1
+	  $WMCTRL -a "ZoneMinder Viewer"
+	  sleep
+	  sudo $XTE "key F5"
+	fi
+
+	if [ $ISZMVUP -gt 0 ]; then            # If  zmviewer is active, make it active.
+	  $WMCTRL -a "ZoneMinder Viewer"
+	  sleep 120
+	  sudo $XTE "key F5"
+	fi
+        exitsmarttv
+        echo $1 > $SCRIPTDIR/tmp/input_change.txt
+}
+
+function restartxbmc () {
+ISXBMCUP=$(isup 'kodi.bin')    # Determine if XBMC is already running on system.
+	if [ $ISXBMCUP -gt 0 ]; then            # If xbmc is active, kill it immediately.
+	 killall -9 kodi.bin
+	  $KODI -fs --nolirc &
+	  exit
+	fi
+
+	#restart evrouter too, just in case :)
+	restartevrouter
+}
+
+###########################################################################################################
+
+
+startevrouter  # If evrouter isn't running, start it.
+
+# Run the Sub that matches the 1st argument 
+if [ $1 ]; then
+    $1 "$1"
+fi

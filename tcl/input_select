@@ -1,0 +1,54 @@
+#! /usr/bin/wish
+set inputscript "/home/wayne/HomeAVControl/bin/input_change"
+
+global inputscript
+
+proc start {} {
+global inputscript
+  exec $inputscript xbmc & 
+}
+
+proc restart {} {
+global inputscript
+  exec $inputscript restartxbmc &
+}
+
+proc directtv {} {
+global inputscript
+  exec $inputscript directtv &
+}
+
+proc smarthub {} {
+global inputscript
+  exec $inputscript samsung &
+}
+
+proc zmviewer {} {
+global inputscript
+  exec $inputscript fdcam &
+}
+
+proc wii {} {
+global inputscript
+  exec $inputscript wii &
+}
+
+proc roku {} {
+global inputscript
+  exec $inputscript roku &
+}
+
+
+proc screen {} {
+  frame .top -borderwidth 10
+  pack .top -fill x	
+  button .top.start -text "Start\n XBMC" -font {Arial 40} -height 30 -width 8 -command start
+  button .top.restart -text "Restart\n XMBC" -font {Arial 40} -height 30 -width 8 -command restart
+  button .top.directtv -text "Directtv" -font {Arial 40} -height 30 -width 8 -command directtv
+  button .top.smarthub -text "Smarthub" -font {Arial 40} -height 30 -width 8 -command smarthub
+  button .top.zmviewer -text "Cameras" -font {Arial 40} -height 30 -width 8 -command zmviewer
+  button .top.wii -text "Wii" -font {Arial 40} -height 30 -width 8 -command wii
+  button .top.roku -text "Roku" -font {Arial 40} -height 30 -width 8 -command roku
+  pack .top.start .top.restart .top.directtv .top.smarthub .top.zmviewer .top.wii .top.roku -side left -padx 20p -pady 20p
+}
+screen
