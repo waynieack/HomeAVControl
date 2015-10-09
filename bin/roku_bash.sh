@@ -1,5 +1,5 @@
 #! /bin/sh
-ip=192.168.195.15
+ip=192.168.1.15
 
 mainroku ()
 { case "$input" in
