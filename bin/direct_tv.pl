@@ -127,7 +127,7 @@ if ($#ARGV < 0) {
    usage();
 }
 
-# Loop through each arguement passed on the commandline
+# Loop through each argument passed on the commandline
 while ($#ARGV >= 0) {
    if (defined($sub = $cmds{$ARGV[0]})) {
       shift @ARGV;
